@@ -7,10 +7,10 @@ import { useDispatch } from "react-redux";
 
 import { postData } from "../redux/thunks/action";
 
-const PostForm = (props) => {
+const PostForm = () => {
   const dispatch = useDispatch();
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   return (
     <header id="header">
@@ -24,9 +24,10 @@ const PostForm = (props) => {
               description: data.description,
               image: data.image,
               category: data.category,
-            })
-          )
-        )}
+            }), reset()
+            )
+            )}
+            
       >
         <input id="title" placeholder="Title" {...register("title")} /> <br />
         <textarea
@@ -55,6 +56,7 @@ const PostForm = (props) => {
           Post It
         </button>
       </form>
+      <button id="favourite">Favourite</button>
     </header>
   );
 };

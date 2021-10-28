@@ -15,9 +15,15 @@ const postSlice = createSlice({
     ADD_POST(state, action) {
       state.posts = [action.payload, ...state.posts];
     },
+
+    SHOW_FAV(state, action) {
+      if (action.type === "SHOW") {
+        return [...state.posts, action.payload];
+      }
+    },
   },
 });
 
-export const { FETCH_POSTS, ADD_POST } = postSlice.actions;
+export const { FETCH_POSTS, ADD_POST, SHOW_FAV } = postSlice.actions;
 
 export default postSlice.reducer;
