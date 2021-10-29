@@ -22,14 +22,14 @@ function App() {
 
   console.log(show);
 
-  /*posts.length <= 0 ? (
-        <h4 className="loading">Loading...</h4>
-      ) : ( */
+  
 
   return (
     <>
       <PostForm />
-      {show &&
+      {posts.length <= 0 ? (
+        <h4 className="loading">Loading...</h4>
+      ) : (show &&
         posts.map((post) => (
           <PostCard
             key={post.objectId}
@@ -39,7 +39,7 @@ function App() {
             category={post.category}
             favourite={post.favourite}
           />
-        ))}
+        )))}
         {!show && addFav &&  posts.map((post) => (
           <PostCard
             key={post.objectId}
