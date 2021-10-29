@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   posts: [],
+  fav: false,
 };
 
 const postSlice = createSlice({
@@ -16,14 +17,20 @@ const postSlice = createSlice({
       state.posts = [action.payload, ...state.posts];
     },
 
-    SHOW_FAV(state, action) {
-      if (action.type === "SHOW") {
-        return [...state.posts, action.payload];
+    AddToFav(state, action) {
+     if(state.fav = true){
+     return  state.fav = action.payload;
+     } 
+    },
+
+    ShowFav(state, action) {
+      if (state.fav === true) {
+      return  state.fav = [action.payload, ...state.posts];
       }
     },
   },
 });
 
-export const { FETCH_POSTS, ADD_POST, SHOW_FAV } = postSlice.actions;
+export const { FETCH_POSTS, ADD_POST, AddToFav, ShowFav } = postSlice.actions;
 
 export default postSlice.reducer;

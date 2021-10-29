@@ -17,6 +17,13 @@ function App() {
   }, [dispatch]);
 
   const posts = useSelector((state) => state.list.posts);
+  const show = useSelector((state) => state.list.fav);
+
+
+  
+  // const addToFavHandler = () => {
+    
+  // }
 
   return (
     <>
@@ -24,6 +31,7 @@ function App() {
       {posts.length <= 0 ? (
         <h4 className="loading">Loading...</h4>
       ) : (
+        show &&
         posts.map((post) => (
           <PostCard
             key={post.objectId}

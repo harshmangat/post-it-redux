@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
+import { addToFav } from "../redux/thunks/Favourite";
 import "./PostIt.css";
 
 const PostCard = (props) => {
+ const dispatch =  useDispatch()
+  
+  
+  
   return (
     <div className="post">
       <img className="img" src={props.url} alt="books" />
@@ -9,7 +15,7 @@ const PostCard = (props) => {
         <p className="text">{props.text}</p>
       </div>
       <button className="category">{props.category}</button>
-      <button className="favIcon">
+      <button className="favIcon" onClick={() =>dispatch(addToFav())} >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="w-6 h-6"

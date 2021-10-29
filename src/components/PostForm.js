@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 
 import { postData } from "../redux/thunks/action";
+import { ShowFavourite } from "../redux/thunks/Favourite";
 
 const PostForm = () => {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ const PostForm = () => {
           Post It
         </button>
       </form>
-      <button id="favourite">Favourite</button>
+      <button id="favourite" onClick={() => dispatch(ShowFavourite())}>Favourite</button>
     </header>
   );
 };
