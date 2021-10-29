@@ -18,9 +18,8 @@ const postSlice = createSlice({
     },
 
     AddToFav(state, action) {
-     if(state.fav = true){
-     return  state.fav = action.payload;
-     } 
+       state.fav = action.payload;
+      
     },
 
     ShowFav(state, action) {

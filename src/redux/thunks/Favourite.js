@@ -1,13 +1,14 @@
 import { AddToFav, ShowFav } from "../slices/post-slice";
 
-export const ShowFavourite = () => (dispatch) => {
-  let show = false;
-  return dispatch(ShowFav(show))
+export const ShowFavourite = (show) => (dispatch) => {
+  
+  console.log(show)
+  return dispatch(ShowFav())
 };
 
 
-export const addToFav = () => (dispatch) =>{
-
-   let addToList = false
-  return dispatch(AddToFav(addToList))
+export const addToFav = (data) => (dispatch) =>{
+  data = true
+  console.log(data)
+  return dispatch(AddToFav())
 }

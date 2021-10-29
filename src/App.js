@@ -21,9 +21,7 @@ function App() {
 
 
   
-  // const addToFavHandler = () => {
-    
-  // }
+  
 
   return (
     <>
@@ -31,7 +29,7 @@ function App() {
       {posts.length <= 0 ? (
         <h4 className="loading">Loading...</h4>
       ) : (
-        show &&
+        !show &&
         posts.map((post) => (
           <PostCard
             key={post.objectId}
