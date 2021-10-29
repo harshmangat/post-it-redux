@@ -18,18 +18,18 @@ function App() {
 
   const posts = useSelector((state) => state.list.posts);
   const show = useSelector((state) => state.list.fav);
+  const addFav = useSelector(state => state.list.addFav)
 
-  console.log(show)
-  
-  
+  console.log(show);
+
+  /*posts.length <= 0 ? (
+        <h4 className="loading">Loading...</h4>
+      ) : ( */
 
   return (
     <>
       <PostForm />
-      {posts.length <= 0 ? (
-        <h4 className="loading">Loading...</h4>
-      ) : (
-         show &&
+      {show &&
         posts.map((post) => (
           <PostCard
             key={post.objectId}
@@ -39,8 +39,17 @@ function App() {
             category={post.category}
             favourite={post.favourite}
           />
-        ))
-      )}
+        ))}
+        {!show && addFav &&  posts.map((post) => (
+          <PostCard
+            key={post.objectId}
+            title={post.title}
+            text={post.description}
+            url={post.image}
+            category={post.category}
+            favourite={post.favourite}
+          />
+        )) }
     </>
   );
 }

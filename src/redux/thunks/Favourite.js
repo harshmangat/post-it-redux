@@ -7,8 +7,7 @@ export const ShowFavourite = (show) => (dispatch) => {
 };
 
 
-export const addToFav = (data) => (dispatch) =>{
-  data = true
-  console.log(data)
+export const addToFav = () => (dispatch) =>{
+  
   return dispatch(AddToFav())
 }
