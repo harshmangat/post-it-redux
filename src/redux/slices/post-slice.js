@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   posts: [],
-  fav: false,
+  fav: true,
 };
 
 const postSlice = createSlice({
@@ -22,7 +22,7 @@ const postSlice = createSlice({
     },
 
     ShowFav(state) {
-      state.fav = true;
+      state.fav = !state.fav
     },
   },
 });
