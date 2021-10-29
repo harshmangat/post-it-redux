@@ -19,7 +19,7 @@ function App() {
   const posts = useSelector((state) => state.list.posts);
   const show = useSelector((state) => state.list.fav);
 
-
+  console.log(show)
   
   
 
@@ -29,7 +29,7 @@ function App() {
       {posts.length <= 0 ? (
         <h4 className="loading">Loading...</h4>
       ) : (
-        !show &&
+         !show &&
         posts.map((post) => (
           <PostCard
             key={post.objectId}
@@ -37,6 +37,7 @@ function App() {
             text={post.description}
             url={post.image}
             category={post.category}
+            favourite={post.favourite}
           />
         ))
       )}

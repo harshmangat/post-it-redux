@@ -25,6 +25,7 @@ const PostForm = () => {
               description: data.description,
               image: data.image,
               category: data.category,
+              favourite: data.favourite,
             }), reset()
             )
             )}
