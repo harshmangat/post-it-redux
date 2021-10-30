@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 import { useDispatch } from "react-redux";
 
-import { postData } from "../redux/thunks/action";
+import { postData } from "../redux/thunks/PostData";
 import { ShowFavourite } from "../redux/thunks/Favourite";
 
 const PostForm = () => {

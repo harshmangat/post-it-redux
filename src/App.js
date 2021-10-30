@@ -7,7 +7,7 @@ import PostCard from "./components/PostCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-import { fetchData } from "./redux/thunks/action";
+import { fetchData } from "./redux/thunks/FetchData";
 
 function App() {
   const dispatch = useDispatch();
