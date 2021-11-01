@@ -6,6 +6,7 @@ import { FETCH_POSTS } from "../slices/post-slice";
 export const fetchData = () => async (dispatch) => {
   let response = await axiosInstance.get("/Post/?order=-createdAt");
 
+  // console.log(response.data.results)
   // response = response.data;
   return dispatch(FETCH_POSTS(response.data.results));
 };

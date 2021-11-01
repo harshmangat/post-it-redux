@@ -111,6 +111,7 @@ input[type="url"] {
 #favourite:hover {
   transform: scale(1.1);
 }
+
 /* header end */
 
 /* Main Section */
@@ -192,9 +193,25 @@ input[type="url"] {
 .favIcon:hover {
   transform: scale(1.1);
 }
-.favIcon:focus{
-  color: #113177;
+
+.delete {
+  width: 1.3rem;
+  color: black;
+  float: right;
+  margin-top: 1rem;
+  margin-right: 1.8rem;
+  border: none;
+  color: gray;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 1ms;
 }
+
+.delete:hover{
+  transform: scale(1.1);
+  color: red;
+}
+
 /* Main ends */
 
 /* Media Query */

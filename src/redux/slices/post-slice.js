@@ -17,24 +17,29 @@ const postSlice = createSlice({
       state.posts = [action.payload, ...state.posts];
     },
 
-    AddToFav(state, action) {
-      
-     console.log(action.payload)
-    let postIndex =  state.posts.indexOf((item)=> item.id === action.payload.id )
-     
-      state.posts[postIndex].favourite = true;
-      
-      
-  
+    ToggleFav(state, action) {
+      let postIndex = state.posts.findIndex(
+        (item) => item.objectId === action.payload
+      );
+      state.posts[postIndex].favourite = !state.posts[postIndex].favourite;
     },
 
     ShowFav(state) {
-      state.fav = !state.fav
-      
+      state.fav = !state.fav;
+    },
+
+    delete_Post(state, action) {
+      console.log(action.payload);
+
+      state.posts.splice(
+        state.posts.findIndex((item) => item.objectId === action.payload),
+        1
+      );
     },
   },
 });
 
-export const { FETCH_POSTS, ADD_POST, AddToFav, ShowFav } = postSlice.actions;
+export const { FETCH_POSTS, ADD_POST, ToggleFav, ShowFav, delete_Post } =
+  postSlice.actions;
 
 export default postSlice.reducer;

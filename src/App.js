@@ -36,6 +36,7 @@ function App() {
               category={post.category}
               favourite={post.favourite}
               id={post.objectId}
+              delete={post.delete}
             />
           ))
         : posts
@@ -49,6 +50,7 @@ function App() {
                 category={post.category}
                 favourite={post.favourite}
                 id={post.objectId}
+                delete={post.delete}
               />
              
             ))}
