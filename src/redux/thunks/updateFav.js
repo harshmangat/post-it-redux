@@ -4,7 +4,7 @@ import axiosInstance from "../../apis/axiosInstance";
 export const updateFav = (data) => async (dispatch) => {
 
  const {id, favourite} = data
- console.log(data)
+ 
 
  const postData = {
    favourite: !favourite}
