@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addToFav } from "../redux/thunks/Favourite";
+import { AddToFav } from "../redux/slices/post-slice";
 import "./PostIt.css";
 
 const PostCard = (props) => {
@@ -13,7 +13,7 @@ const PostCard = (props) => {
         <p className="text">{props.text}</p>
       </div>
       <button className="category">{props.category}</button>
-      <button className="favIcon" onClick={() => dispatch(addToFav())}>
+      <button className="favIcon" onClick={() => {dispatch(AddToFav(props.id))}}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="w-6 h-6"

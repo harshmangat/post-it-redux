@@ -192,6 +192,9 @@ input[type="url"] {
 .favIcon:hover {
   transform: scale(1.1);
 }
+.favIcon:focus{
+  color: #113177;
+}
 /* Main ends */
 
 /* Media Query */
