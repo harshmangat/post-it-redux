@@ -1,13 +1,7 @@
 import axiosInstance from "../../apis/axiosInstance";
 
-export const deletePost = (data) => async (dispatch) => {
+export const deletePost = (data) => async () => {
   const { id } = data;
-  
 
-  const postData = {
-    objectId: id,
-  };
-
-  let res = await axiosInstance.delete(`/Post/${id}`, postData);
-  console.log(res)
+  await axiosInstance.delete(`/Post/${id}`);
 };

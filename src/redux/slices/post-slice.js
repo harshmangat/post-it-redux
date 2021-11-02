@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   posts: [],
   fav: true,
+  isLoading: false,
 };
 
 const postSlice = createSlice({
@@ -29,17 +30,24 @@ const postSlice = createSlice({
     },
 
     delete_Post(state, action) {
-      console.log(action.payload);
-
       state.posts.splice(
         state.posts.findIndex((item) => item.objectId === action.payload),
         1
       );
     },
+    set_loading(state, action) {
+      state.isLoading = action.payload;
+    },
   },
 });
 
-export const { FETCH_POSTS, ADD_POST, ToggleFav, ShowFav, delete_Post } =
-  postSlice.actions;
+export const {
+  FETCH_POSTS,
+  ADD_POST,
+  ToggleFav,
+  ShowFav,
+  delete_Post,
+  set_loading,
+} = postSlice.actions;
 
 export default postSlice.reducer;

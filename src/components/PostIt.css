@@ -207,7 +207,7 @@ input[type="url"] {
   transition: all 1ms;
 }
 
-.delete:hover{
+.delete:hover {
   transform: scale(1.1);
   color: red;
 }

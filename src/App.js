@@ -18,15 +18,20 @@ function App() {
 
   const posts = useSelector((state) => state.list.posts);
   const show = useSelector((state) => state.list.fav);
-
-  
+  const isLoading = useSelector((state) => state.list.isLoading);
 
   
 
   return (
     <>
       <PostForm />
-      {show
+      
+      {isLoading && <h4 className="loading">Loading New Post..</h4>}
+
+      {posts.length <= 0 &&show.length <= 0 && <h1>no post</h1>}
+      
+      {posts.length <= 0 ? <h4 className='loading'>Loading...</h4> : 
+      show
         ? posts.map((post) => (
             <PostCard
               key={post.objectId}
@@ -43,7 +48,7 @@ function App() {
             .filter((item) => item.favourite === true)
             .map((post) => (
               <PostCard
-              key={post.objectId}
+                key={post.objectId}
                 title={post.title}
                 text={post.description}
                 url={post.image}
@@ -52,8 +57,7 @@ function App() {
                 id={post.objectId}
                 delete={post.delete}
               />
-             
-            ))}
+            )) }
     </>
   );
 }
