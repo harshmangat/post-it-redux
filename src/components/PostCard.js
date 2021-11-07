@@ -1,7 +1,9 @@
 import { useDispatch } from "react-redux";
 import { ToggleFav, delete_Post } from "../redux/slices/post-slice";
+
 import { updateFav } from "../redux/thunks/updateFav";
 import { deletePost } from "../redux/thunks/delete-action";
+
 import "./PostIt.css";
 
 const PostCard = (props) => {

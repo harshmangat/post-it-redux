@@ -17,3 +17,13 @@ code {
   color: rgb(114, 111, 111);
   margin-top: 0.7rem;
 }
+
+.no-post {
+  text-align: center;
+  margin: 20% auto;
+  text-transform: capitalize;
+  background-color: #d6d6d6;
+  color: #fff;
+  width: 30rem;
+  padding: 2rem;
+}
