@@ -5,9 +5,18 @@ import { updateFav } from "../redux/thunks/updateFav";
 import { deletePost } from "../redux/thunks/delete-action";
 
 import "./PostIt.css";
+import toast, { Toaster } from 'react-hot-toast';
 
 const PostCard = (props) => {
   const dispatch = useDispatch();
+  const notify = () => toast('You Liked It!', {
+    icon: '❤',
+    style: {
+      border: '1px solid blue',
+      color: 'red',
+    },
+    
+  });
 
   return (
     <div className="post">
@@ -21,7 +30,7 @@ const PostCard = (props) => {
       <button
         className="favIcon"
         onClick={() => {
-          dispatch(ToggleFav(props.id));
+          dispatch(ToggleFav(props.id),notify());
           dispatch(updateFav({ id: props.id, favourite: props.favourite }));
         }}
       >
@@ -63,6 +72,7 @@ const PostCard = (props) => {
           />
         </svg>
       </button>
+      <Toaster />
     </div>
   );
 };
