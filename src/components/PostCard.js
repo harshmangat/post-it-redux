@@ -9,14 +9,8 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const PostCard = (props) => {
   const dispatch = useDispatch();
-  const notify = () => toast('You Liked It!', {
-    icon: '❤',
-    style: {
-      border: '1px solid blue',
-      color: 'red',
-    },
-    
-  });
+  const notify = () => toast(props.favourite ?  ('You Uniked It'): ('You Liked It!'));
+
 
   return (
     <div className="post">
